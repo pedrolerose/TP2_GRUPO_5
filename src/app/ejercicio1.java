@@ -6,11 +6,13 @@ import java.util.Iterator;
 
 import dominio.Banda;
 import dominio.BandaSoporte;
+import dominio.Cliente;
 import dominio.Entrada;
 import dominio.EntradaDeporte;
 import dominio.EntradaInfantil;
 import dominio.EntradaRecital;
 import dominio.EntradaTeatro;
+import dominio.Venta;
 
 public class ejercicio1 {
 
@@ -42,6 +44,19 @@ public class ejercicio1 {
 			 Entrada e = (Entrada) entradaIterator.next();
 			 System.out.println(e.toString());
 		 }
+		 
+		 		 
+		 /* TODO: Borrar esto, solo se incluyo para mostrar las clases*/
+		 
+		 System.out.println("\n \n ===============================================");
+		 Cliente _cliente1 = new Cliente("Ricardo", "Lopez", "41672222", "Francia 1312", "Pacheco", "Buenos Aires", "Masculino");
+		 Venta vta = new Venta(_cliente1, hoy, entradas);
+		 System.out.println(vta.toString());
+		 
+		 System.out.println(" =============================================== ");
+		 
+		 
+		 /*------------------------------------------------------------------------------------------------------------------------*/
 		 
 
 	}

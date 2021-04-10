@@ -49,5 +49,13 @@ public class Entrada extends EntidadBase {
 		this.nombreEvento = nombreEvento;
 	}
 	
+	public String getEntradaInfo() {
+		return "Nombre evento: " +  nombreEvento + "\n" +
+		"Duracion: " + tiempoDuracion + " min. \n" + 
+		"Precio: $" + precio + "\n" +
+		"--------------------------- \n" ;
+		
+	}
+	
 	
 }
