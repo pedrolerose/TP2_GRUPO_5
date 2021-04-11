@@ -19,7 +19,7 @@ public class ejercicio1 {
 
 	public static void main(String[] args) {
 
-		int desicion = 2;
+		int desicion = 1;
 		
 		if (desicion == 1) {
 			mainEjercicio1();

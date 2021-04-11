@@ -1,8 +1,9 @@
 package dominio;
 
+import java.util.Arrays;
 import java.util.Date;
 
-public class EntradaRecital extends Entrada implements IGenero{
+public class EntradaRecital extends Entrada implements IGenero, Comparable<Entrada>{
 	
 	//properties
 	
@@ -149,6 +150,58 @@ public class EntradaRecital extends Entrada implements IGenero{
  		 		+ "Fecha: " + this.getFecha() + " \n"
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
 				+ "Tipo: " + tipoDeEntrada + "\n -------------------------- \n";
+	}
+
+
+	@Override
+	public int compareTo(Entrada o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((Genero == null) ? 0 : Genero.hashCode());
+		result = prime * result + PRECIO_ENTRADA_GRAL;
+		result = prime * result + PRECIO_ENTRADA_VIP;
+		result = prime * result + ((banda == null) ? 0 : banda.hashCode());
+		result = prime * result + Arrays.hashCode(bandaSoporte);
+		result = prime * result + (esVip ? 1231 : 1237);
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EntradaRecital other = (EntradaRecital) obj;
+		if (Genero == null) {
+			if (other.Genero != null)
+				return false;
+		} else if (!Genero.equals(other.Genero))
+			return false;
+		if (PRECIO_ENTRADA_GRAL != other.PRECIO_ENTRADA_GRAL)
+			return false;
+		if (PRECIO_ENTRADA_VIP != other.PRECIO_ENTRADA_VIP)
+			return false;
+		if (banda == null) {
+			if (other.banda != null)
+				return false;
+		} else if (!banda.equals(other.banda))
+			return false;
+		if (!Arrays.equals(bandaSoporte, other.bandaSoporte))
+			return false;
+		if (esVip != other.esVip)
+			return false;
+		return true;
 	}
 
 

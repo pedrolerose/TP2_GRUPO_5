@@ -24,41 +24,22 @@ public class ejercicio1 {
 		BandaSoporte[] bandasSoporte = {new BandaSoporte("Chaqueño Palavecino"),new BandaSoporte("Almafuerte")}; 
 		String []arrayActoresPpal = {"Valeria Lynch","Pappo","Pepito Cybrian"};
         
-		EntradaDeporte entDep = new EntradaDeporte(hoy, 30, "Super Clasico", "Futbol", false);	
-		EntradaDeporte entDep2 = new EntradaDeporte(hoy, 30, "Clasificatoria", "Basquet", false);
-		EntradaInfantil entInf = new EntradaInfantil(hoy, 15,"Heidy", 8, true);		
-		EntradaRecital entRec = new EntradaRecital(hoy, 120, "Rock and Roll", true,"G_Rock", bandaPpal, bandasSoporte);	
-		EntradaTeatro entTeat = new EntradaTeatro(hoy, 60, "Prohibido Reirse", arrayActoresPpal,"G_Comedia");		
-		
+		Entrada e1 = new EntradaDeporte(hoy, 30, "Super Clasico", "Futbol", false);	
+		Entrada e2 = new EntradaDeporte(hoy, 30, "Clasificatoria", "Rugby", false);
+		Entrada e3 = new EntradaInfantil(hoy, 15,"Heidy", 8, true);		
+		Entrada e4 = new EntradaRecital(hoy, 120, "Rock and Roll", true,"G_Rock", bandaPpal, bandasSoporte);	
+		Entrada e5 = new EntradaTeatro(hoy, 60, "Prohibido Reirse", arrayActoresPpal,"G_Comedia");			
 		ArrayList<Entrada> entradas = new ArrayList<Entrada>();
-		
-		entradas.add(entDep);
-		entradas.add(entDep2);
-		entradas.add(entInf);
-		entradas.add(entRec);
-		entradas.add(entTeat);
-		
-		 Iterator<Entrada> entradaIterator = entradas.iterator();
-		 
-		 while(entradaIterator.hasNext()) {
-			 Entrada e = (Entrada) entradaIterator.next();
-			 System.out.println(e.toString());
-		 }
-		 
-		 		 
-		 /* TODO: Borrar esto, solo se incluyo para mostrar las clases*/
-		 
-		 System.out.println("\n \n ===============================================");
-		 Cliente _cliente1 = new Cliente("Ricardo", "Lopez", "41672222", "Francia 1312", "Pacheco", "Buenos Aires", "Masculino");
-		 Venta vta = new Venta(_cliente1, hoy, entradas);
-		 System.out.println(vta.toString());
-		 
-		 System.out.println(" =============================================== ");
-		 
-		 
-		 /*------------------------------------------------------------------------------------------------------------------------*/
-		 
+		entradas.add(e1);
+		entradas.add(e2);
+		entradas.add(e3);
+		entradas.add(e4);
+		entradas.add(e5);
 
+		Cliente nvoCliente = new Cliente("Juan","Peron","02134532","Balcarce 50","CABA","Buenos Aires","Masculino");
+		Venta venta = new Venta(nvoCliente,hoy,entradas);
+		
+		System.out.println(venta.toString());
 	}
 
 }

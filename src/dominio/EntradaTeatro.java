@@ -1,8 +1,9 @@
 package dominio;
 
+import java.util.Arrays;
 import java.util.Date;
 
-public class EntradaTeatro extends Entrada implements IGenero {
+public class EntradaTeatro extends Entrada implements IGenero, Comparable<Entrada> {
 
 	private String [] actorPrincipal;
 	private final double PRECIO_FIJO_ENTRADA = 1350.50;
@@ -80,6 +81,45 @@ String Tipo_Genero;
 				+ "Duracion: " + this.getTiempoDuracion() + " minutos \n"
 				+ "Actores principales: "+ actores; 
 				
+	}
+
+	@Override
+	public int compareTo(Entrada o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((Genero == null) ? 0 : Genero.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(PRECIO_FIJO_ENTRADA);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + Arrays.hashCode(actorPrincipal);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EntradaTeatro other = (EntradaTeatro) obj;
+		if (Genero == null) {
+			if (other.Genero != null)
+				return false;
+		} else if (!Genero.equals(other.Genero))
+			return false;
+		if (Double.doubleToLongBits(PRECIO_FIJO_ENTRADA) != Double.doubleToLongBits(other.PRECIO_FIJO_ENTRADA))
+			return false;
+		if (!Arrays.equals(actorPrincipal, other.actorPrincipal))
+			return false;
+		return true;
 	}
 
 
