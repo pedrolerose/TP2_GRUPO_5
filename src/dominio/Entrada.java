@@ -23,8 +23,8 @@ public class Entrada extends EntidadBase implements Comparable<Entrada> {
 		
 		super(fechaEv);
 		
-		tiempoDuracion = tiempoDuracionEv;
-		nombreEvento = nombreEventoEv;
+		this.tiempoDuracion = tiempoDuracionEv;
+		this.nombreEvento = nombreEventoEv;
 	}
 	
 	//getters and setters

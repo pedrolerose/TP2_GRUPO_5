@@ -29,6 +29,7 @@ public class ejercicio1 {
 		Entrada e3 = new EntradaInfantil(hoy, 15,"Heidy", 8, true);		
 		Entrada e4 = new EntradaRecital(hoy, 120, "Rock and Roll", true,"G_Rock", bandaPpal, bandasSoporte);	
 		Entrada e5 = new EntradaTeatro(hoy, 60, "Prohibido Reirse", arrayActoresPpal,"G_Comedia");			
+		
 		ArrayList<Entrada> entradas = new ArrayList<Entrada>();
 		entradas.add(e1);
 		entradas.add(e2);

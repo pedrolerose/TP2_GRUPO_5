@@ -5,7 +5,7 @@ import java.util.*;
 //import java.util.ArrayList;
 //import java.util.Iterator;
 
-public class Venta implements Comparable<Entrada> {
+public class Venta implements Comparable<Venta> {
 
 	private static int cont = 0;
 	private int nroUnicoDeVenta = 0;
@@ -28,17 +28,20 @@ public class Venta implements Comparable<Entrada> {
 		cont++;
 		this.nroUnicoDeVenta = cont;
 		fechaDeVenta = _fechaDeVenta;
+		this.cliente = _cliente;
 		precioTotal = getPrecioTotalEntradas(_treeList);
 		treeList = _treeList;
 	}
 
 	private double getPrecioTotalEntradas(TreeSet<Entrada> _treeList) {
 
-		Iterator<Entrada> entradaIterator = treeList.iterator();
+		Iterator<Entrada> entradaIterator = _treeList.iterator();
 		double precioTotal = 0;
 		while (entradaIterator.hasNext()) {
 			Entrada e = (Entrada) entradaIterator.next();
 			precioTotal += e.getPrecio();
+			
+			
 		}
 
 		return precioTotal;
@@ -46,7 +49,8 @@ public class Venta implements Comparable<Entrada> {
 
 	public double getPrecioTotalEntradas(ArrayList<Entrada> entradaList) {
 
-		Iterator<Entrada> entradaIterator = entradaList.iterator();
+		//modifico iterator ya que con arrays list debemos usar list iterator(nahuel revollo)
+		ListIterator<Entrada> entradaIterator = entradaList.listIterator();
 		double precioTotal = 0;
 		while (entradaIterator.hasNext()) {
 			Entrada e = (Entrada) entradaIterator.next();
@@ -100,13 +104,30 @@ public class Venta implements Comparable<Entrada> {
 	public String entradaListToString() {
 
 		String _ret = "";
-		Iterator<Entrada> entradaIterator = entradaList.iterator();
+		//modifico iterator ya que con arrays list debemos usar list iterator(nahuel revollo)
+		ListIterator<Entrada> entradaIterator = entradaList.listIterator();
 		while(entradaIterator.hasNext()) {
 			Entrada e = (Entrada)entradaIterator.next();
 			_ret += e.toString();
 		}
 		return _ret;
 	}
+	//Modificado por nahuel revollo
+	public String entradaTreeListToString() {
+
+		String _ret = "";
+		
+		Iterator<Entrada> entradaIterator = treeList.iterator();
+		while(entradaIterator.hasNext()) {
+			Entrada e = (Entrada)entradaIterator.next();
+			_ret += e.toString();
+			
+		}
+		return _ret;
+	}
+	
+	
+	//fin de la modificacion de nahuel revollo
 
 	public String toString() {
 
@@ -124,10 +145,40 @@ public class Venta implements Comparable<Entrada> {
 		return _ret;
 	}
 
+	
+	//Modificado por nahuel revollo
+	
+	public String toString2() {
+
+		String _ret = "Venta - Factura \n" + 
+		"Nro de venta:" + nroUnicoDeVenta + "\n" +
+		"Cliente: "+ cliente.getApellido() + ", " + cliente.getNombre() + ".\n" + 
+		"Fecha: " + fechaDeVenta + "\n"+ 
+		"--------------------------- \n"+
+		"Entradas adquiridas: \n";
+
+		_ret = _ret + entradaTreeListToString()+"\n";
+		_ret =_ret + "-------------------------------------\n";
+		_ret = _ret + "*** Precio total: $" + precioTotal+" ***";
+
+		return _ret;
+	}
+	
+	
+	//fin de la modificacion de nahuel revollo
+	
 	@Override
-	public int compareTo(Entrada o) {
+	public int compareTo(Venta o) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		if (o.getNroUnicoDeVenta() == this.nroUnicoDeVenta)
+			return 0;
+		if (o.getNroUnicoDeVenta()< this.nroUnicoDeVenta) {
+			return 0;
+		}
+			
+		return 1;
+		
 	}
 
 }
