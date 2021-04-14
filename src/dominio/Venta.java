@@ -118,6 +118,7 @@ public class Venta implements Comparable<Venta> {
 		String _ret = "";
 		
 		Iterator<Entrada> entradaIterator = treeList.iterator();
+		
 		while(entradaIterator.hasNext()) {
 			Entrada e = (Entrada)entradaIterator.next();
 			_ret += e.toString();

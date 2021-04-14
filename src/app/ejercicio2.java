@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Iterator;
+
 
 import dominio.Banda;
 import dominio.BandaSoporte;
@@ -26,7 +28,7 @@ public class ejercicio2 {
 		String []arrayActoresPpal = {"Pablo Echarri ","Franchella ","Shakira "};
 		
 		
-		
+				
 		Entrada entDeporte = new EntradaDeporte(hoy, 30, "Super Clasico","Futbol", false);
 		
 		Entrada entDeporte2 = new EntradaDeporte(hoy, 30, "Clasificatoria","Rugby", false);
@@ -38,6 +40,7 @@ public class ejercicio2 {
 		Entrada entRecital = new EntradaRecital(hoy, 120, "Rock and Roll", true,"G_Rock", bandaPpal, bandasSoporte);	
 		
 		Entrada entTeatro = new EntradaTeatro(hoy, 60, "Prohibido Reirse", arrayActoresPpal,"G_Comedia");		
+	
 		
 		if(entDeporte2.equals(entDeporte3))
 		{
@@ -55,8 +58,6 @@ public class ejercicio2 {
 		T_entradas.add(entRecital);
 		T_entradas.add(entTeatro);
 		
-				
-		
 		//modificado por Nahuel Revollo
 		Cliente nvoCliente = new Cliente("Lalo","Landa","04136501","Segurola 320","CABA","Buenos Aires","Masculino");
 		Venta venta1 = new Venta(nvoCliente,hoy,T_entradas);
@@ -71,7 +72,7 @@ public class ejercicio2 {
 		 
 		 
 		}
-		 
+
 	}
 
 }

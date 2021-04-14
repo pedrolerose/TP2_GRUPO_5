@@ -122,10 +122,11 @@ public class EntradaDeporte extends Entrada implements Comparable<Entrada> {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!super.equals(obj))
-			return false;
+//		if (!super.equals(obj))
+//			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		
 		EntradaDeporte other = (EntradaDeporte) obj;
 		if (OPCION_FUTBOL == null) {
 			if (other.OPCION_FUTBOL != null)
