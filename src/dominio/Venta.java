@@ -117,13 +117,18 @@ public class Venta implements Comparable<Venta> {
 
 		String _ret = "";
 		
-		Iterator<Entrada> entradaIterator = treeList.iterator();
+//		Iterator<Entrada> entradaIterator = treeList.iterator();
+//		
+//		while(entradaIterator.hasNext()) {
+//			Entrada e = (Entrada)entradaIterator.next();
+//			_ret += e.toString();
+//			
+//		}
 		
-		while(entradaIterator.hasNext()) {
-			Entrada e = (Entrada)entradaIterator.next();
-			_ret += e.toString();
-			
+		for(Entrada e : treeList) {
+			_ret+= e.toString();
 		}
+		
 		return _ret;
 	}
 	
@@ -141,8 +146,8 @@ public class Venta implements Comparable<Venta> {
 
 		_ret = _ret + entradaListToString()+"\n";
 		_ret =_ret + "-------------------------------------\n";
-		_ret = _ret + "*** Precio total: $" + precioTotal+" ***";
-
+		_ret = _ret + "*** Precio total: $" + precioTotal+" ***\n";
+		_ret = _ret + "<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>\n\n";
 		return _ret;
 	}
 
@@ -160,7 +165,8 @@ public class Venta implements Comparable<Venta> {
 
 		_ret = _ret + entradaTreeListToString()+"\n";
 		_ret =_ret + "-------------------------------------\n";
-		_ret = _ret + "*** Precio total: $" + precioTotal+" ***";
+		_ret = _ret + "*** Precio total: $" + precioTotal+" ***\n";
+		_ret = _ret + "<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>\n\n";
 
 		return _ret;
 	}

@@ -37,10 +37,14 @@ public class ejercicio1 {
 		entradas.add(e4);
 		entradas.add(e5);
 
-		Cliente nvoCliente = new Cliente("Juan","Peron","02134532","Balcarce 50","CABA","Buenos Aires","Masculino");
-		Venta venta = new Venta(nvoCliente,hoy,entradas);
+		Cliente nvoCliente1 = new Cliente("Juan","Peron","02134532","Balcarce 50","CABA","Buenos Aires","Masculino");
+		Venta venta1 = new Venta(nvoCliente1,hoy,entradas);
 		
-		System.out.println(venta.toString());
+		Cliente nvoCliente2 = new Cliente("Zoila","Serda","31293211","Jalea 331","Springfield","Ohio","Femenino");
+		Venta venta2 = new Venta(nvoCliente2,hoy,entradas);
+		
+		System.out.println(venta1.toString());
+		System.out.println(venta2.toString());
 	}
 
 }

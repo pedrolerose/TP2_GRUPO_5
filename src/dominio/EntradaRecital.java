@@ -155,8 +155,10 @@ public class EntradaRecital extends Entrada implements IGenero, Comparable<Entra
 
 	@Override
 	public int compareTo(Entrada o) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(o.getNombreEvento() == this.getNombreEvento()) {
+			return 0;
+		}
+		return 1;
 	}
 
 

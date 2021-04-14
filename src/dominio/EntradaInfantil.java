@@ -85,7 +85,6 @@ public String toString() {
 	}
 	
 	return "Id de entrada: " + this.getId() + " \n" 
-			+ "Precio: $" + this.getPrecio() + " \n"
 			+ "Tipo Evento: " + TIPOEVENTO + " \n"
 			+ "Nombre del Evento: " + this.getNombreEvento() + " \n"
 			+ "Precio: $" + this.getPrecio() + " \n"
@@ -96,8 +95,10 @@ public String toString() {
 
 @Override
 public int compareTo(Entrada o) {
-	// TODO Auto-generated method stub
-	return 0;
+	if(o.getNombreEvento() == this.getNombreEvento()) {
+		return 0;
+	}
+	return 1;
 }
 
 

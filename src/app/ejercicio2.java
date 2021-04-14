@@ -33,7 +33,9 @@ public class ejercicio2 {
 		
 		Entrada entDeporte2 = new EntradaDeporte(hoy, 30, "Clasificatoria","Rugby", false);
 		
-		Entrada entDeporte3 = new EntradaDeporte(hoy, 30, "Clasificatoria","Rugby", false);
+//		Entrada entDeporte3 = new EntradaDeporte(hoy, 30, "Clasificatoria","Rugby", false);
+		
+		Entrada entDeporte3 = new EntradaDeporte(hoy, 30, "Mundial","Hockey", false);
 		
 		Entrada entInfantil = new EntradaInfantil(hoy, 15,"Heidy", 8, true);
 		
@@ -54,6 +56,7 @@ public class ejercicio2 {
 		
 		T_entradas.add(entDeporte);
 		T_entradas.add(entDeporte2);
+		T_entradas.add(entDeporte3);
 		T_entradas.add(entInfantil);
 		T_entradas.add(entRecital);
 		T_entradas.add(entTeatro);
